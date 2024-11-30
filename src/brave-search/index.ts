@@ -10,11 +10,13 @@ import {
 
 const WEB_SEARCH_TOOL: Tool = {
   name: "brave_web_search",
-  description:
-    "Performs a web search using the Brave Search API, ideal for general queries, news, articles, and online content. " +
-    "Use this for broad information gathering, recent events, or when you need diverse web sources. " +
-    "Supports pagination, content filtering, and freshness controls. " +
-    "Maximum 20 results per request, with offset for pagination. ",
+  description: "Search for up-to-date information from the web using Brave Web Search API. " +
+      "Use this tool in the following circumstances:\n" +
+      "- The human is asking about current events or something that requires real-time information (weather, sports scores, etc.)\n" +
+      "- The human is asking about some term you are totally unfamiliar with (it might be new)\n" +
+      "- The human explicitly asks you to browse or provide links to references\n" +
+      "Supports pagination, content filtering, and freshness controls. " +
+      "Maximum 20 results per request, with offset for pagination. ",
   inputSchema: {
     type: "object",
     properties: {
@@ -40,7 +42,7 @@ const WEB_SEARCH_TOOL: Tool = {
 const LOCAL_SEARCH_TOOL: Tool = {
   name: "brave_local_search",
   description:
-    "Searches for local businesses and places using Brave's Local Search API. " +
+    "Searches for local businesses and places using Brave Local Search API. " +
     "Best for queries related to physical locations, businesses, restaurants, services, etc. " +
     "Returns detailed information including:\n" +
     "- Business names and addresses\n" +
@@ -68,7 +70,7 @@ const LOCAL_SEARCH_TOOL: Tool = {
 // Server implementation
 const server = new Server(
   {
-    name: "example-servers/brave-search",
+    name: "mcp-servers/brave-search",
     version: "0.1.0",
   },
   {
